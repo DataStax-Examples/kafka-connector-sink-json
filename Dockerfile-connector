@@ -1,0 +1,6 @@
+FROM confluentinc/cp-kafka-connect-base:5.3.0
+RUN curl -O -L "https://downloads.datastax.com/kafka/kafka-connect-dse.tar.gz" \
+    && mkdir datastax-connector \
+    && tar xzf kafka-connect-dse.tar.gz -C datastax-connector --strip-components=1 \
+    && mv datastax-connector/kafka-connect* datastax-connector/kafka-connect-dse.jar
+ENV CONNECT_PLUGIN_PATH="/usr/share/java,/datastax-connector/kafka-connect-dse.jar"

@@ -1,0 +1,11 @@
+# Alpine Linux with OpenJDK JRE
+FROM openjdk:8u171-jdk-slim-stretch
+
+RUN apt-get update \
+    && apt-get install -y maven
+
+RUN mkdir producer
+
+COPY producer producer/
+
+WORKDIR producer
