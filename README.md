@@ -1,5 +1,5 @@
-# Ingest JSON from Kafka to DataStax databases
-This example shows how to ingest JSON records from Kafka to multiple tables in the DataStax database using the DataStax Apache Kafka Connector. 
+# Ingest JSON from Apache Kafka to DataStax databases
+This example shows how to ingest JSON records from [Kafka](https://kafka.apache.org/) to multiple tables in the [DataStax](https://www.datastax.com/) database using the [DataStax Apache Kafka Connector](https://docs.datastax.com/en/kafka/doc/index.html). 
 
 Contributor(s): [Chris Splinter](https://github.com/csplinter), [Tomasz Lelek](https://github.com/tomekl007)
 
@@ -10,7 +10,7 @@ Contributor(s): [Chris Splinter](https://github.com/csplinter), [Tomasz Lelek](h
 ## Project Layout
 - [Dockerfile-connector](Dockerfile-connector): Dockerfile to build an image of Kafka Connect with the DataStax Kafka Connector installed.
 - [Dockerfile-producer](Dockerfile-producer): Dockerfile to build an image for the producer contained in this repository.
-- [docker-compose.yml](docker-compose.yml): Uses Confluent and DataStax docker images to set up Zookeeper, Kafka Brokers, Kafka Connect, DataStax Distribution of Apache Cassandra, and the producer container.
+- [docker-compose.yml](docker-compose.yml): Uses [Confluent](https://www.confluent.io/) and DataStax docker images to set up Zookeeper, Kafka Brokers, Kafka Connect, DataStax Distribution of Apache Cassandra, and the producer container.
 - [connector-config.json](connector-config.json): Configuration file for the DataStax Kafka Connector to be used with the distributed Kafka Connect Worker.
 - [producer](producer/): Contains the Kafka Java Producer to write records to Kafka. Uses the StringSerializer for the Kafka record key and the JsonSerializer for the Kafka record value.
 
