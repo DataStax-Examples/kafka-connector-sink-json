@@ -1,19 +1,30 @@
-# Ingest JSON from Kafka
-This example shows how to ingest JSON records from Kafka to multiple tables in the DataStax database using the DataStax Apache Kafka Connector.
+# Ingest JSON from Kafka to DataStax databases
+This example shows how to ingest JSON records from Kafka to multiple tables in the DataStax database using the DataStax Apache Kafka Connector. 
+
+Contributor(s): [Chris Splinter](https://github.com/csplinter), [Tomasz Lelek](https://github.com/tomekl007)
+
+## Objectives
+- How to ingest JSON records from Kafka to DataStax databases
+- How to use docker and docker-compose to quickly set up an environment with Zookeeper, Kafka Brokers, Kafka Connect and DataStax databases
 
 ## Project Layout
 - [Dockerfile-connector](Dockerfile-connector): Dockerfile to build an image of Kafka Connect with the DataStax Kafka Connector installed.
 - [Dockerfile-producer](Dockerfile-producer): Dockerfile to build an image for the producer contained in this repository.
-- [docker-compose.yml](docker-compose.yml): Uses Confluent and DataStax docker images to set up Zookeeper, Kafka Brokers, Kafka Connect, DDAC, and the producer container.
+- [docker-compose.yml](docker-compose.yml): Uses Confluent and DataStax docker images to set up Zookeeper, Kafka Brokers, Kafka Connect, DataStax Distribution of Apache Cassandra, and the producer container.
 - [connector-config.json](connector-config.json): Configuration file for the DataStax Kafka Connector to be used with the distributed Kafka Connect Worker.
 - [producer](producer/): Contains the Kafka Java Producer to write records to Kafka. Uses the StringSerializer for the Kafka record key and the JsonSerializer for the Kafka record value.
 
-## Before you begin
-#### Prerequisites
+## How this works
+After running the docker and docker-compose commands, there will be 5 docker containers running, all using the same docker network.
+
+After writing records to the Kafka Brokers, the DataStax Kafka Connector will be started which will start the stream of records from Kafka to the DataStax database, writing a single record to three different tables in the database, showing how to achieve the common Cassandra pattern of denormalization with the connector.
+
+## Setup & Running
+### Prerequisites
 - Docker: https://docs.docker.com/v17.09/engine/installation/
 - Docker Compose: https://docs.docker.com/compose/install/
 
-## Setup
+### Setup
 Clone this repository
 ```
 git clone https://github.com/DataStax-Examples/kafka-connector-sink-json.git
@@ -39,7 +50,7 @@ Start Zookeeper, Kafka Brokers, Kafka Connect, DDAC, and the producer containers
 docker-compose up -d
 ```
 
-## Running
+### Running
 Now that everything is up and running, it's time to set up the flow of data from Kafka to the DataStax database.
 
 Create the Kafka Topic named `json-stream` that the connector will read from.
