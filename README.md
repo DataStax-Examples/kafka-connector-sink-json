@@ -3,6 +3,8 @@ This example shows how to ingest JSON records from [Kafka](https://kafka.apache.
 
 Contributor(s): [Chris Splinter](https://github.com/csplinter), [Tomasz Lelek](https://github.com/tomekl007)
 
+Have Questions? We're here to help: https://community.datastax.com/
+
 ## Objectives
 - How to ingest JSON records from Kafka to Cassandra databases
 - How to use docker and docker-compose to quickly set up an environment with Zookeeper, Kafka Brokers, Kafka Connect and Cassandra
