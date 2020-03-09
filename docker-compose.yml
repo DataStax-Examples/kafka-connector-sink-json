@@ -52,12 +52,10 @@ services:
       CONNECT_INTERNAL_VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
       CONNECT_ZOOKEEPER_CONNECT: 'zookeeper:2181'
 
-  ddac:
-    image: datastax/ddac
-    hostname: datastax-db
-    container_name: datastax-db
-    environment:
-      - DS_LICENSE=accept
+  cassandra:
+    image: cassandra:3.11
+    hostname: cassandra
+    container_name: cassandra
 
   kafka-producer:
     image: kafka-producer:latest
