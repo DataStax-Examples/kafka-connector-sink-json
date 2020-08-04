@@ -1,4 +1,4 @@
-# Ingest JSON from Apache Kafka™ to Apache Cassandra™
+# Ingest JSON from Kafka to Cassandra
 This example shows how to ingest JSON records from [Kafka](https://kafka.apache.org/) to multiple tables in the [Cassandra](https://cassandra.apache.org/) database using the [DataStax Apache Kafka Connector](https://docs.datastax.com/en/kafka/doc/index.html).
 
 Contributor(s): [Chris Splinter](https://github.com/csplinter), [Tomasz Lelek](https://github.com/tomekl007)
