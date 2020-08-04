@@ -7,6 +7,8 @@ Have Questions? We're here to help: https://community.datastax.com/
 
 Want to learn more about the DataStax Kafka Connector? Take a free, [short course on DataStax Academy](https://academy.datastax.com/resources/getting-started-datastax-apache-kafka%E2%84%A2-connector)
 
+Looking for a fully-managed service built on Apache Cassandra? Try DataStax Astra for free: https://astra.datastax.com/
+
 ## Objectives
 - How to ingest JSON records from Kafka to Cassandra databases
 - How to use docker and docker-compose to quickly set up an environment with Zookeeper, Kafka Brokers, Kafka Connect and Cassandra
