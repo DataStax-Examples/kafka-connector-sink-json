@@ -1,7 +1,7 @@
 {
   "name": "datastax-connector-json-multi-table-example",
   "config": {
-    "connector.class": "com.datastax.kafkaconnector.DseSinkConnector",
+    "connector.class": "com.datastax.oss.kafka.sink.CassandraSinkConnector",
     "tasks.max": "10",
     "topics": "json-stream",
     "contactPoints": "cassandra",
